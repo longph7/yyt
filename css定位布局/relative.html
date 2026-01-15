@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 定位对比案例</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 2000px; /* 设置高高度，方便滚动观察 fixed/sticky */
+            padding: 20px;
+        }
+        .box {
+            width: 150px;
+            height: 150px;
+            line-height: 150px;
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        /* 1. static 默认定位 */
+        .static {
+            background-color: #3498db;
+            position: static;
+            top: 50px; /* 无效，static 不支持定位偏移 */
+            left: 50px; /* 无效 */
+        }
+        /* 2. relative 相对定位 */
+        .relative {
+            background-color: #2ecc71;
+            position: relative;
+            top: 30px; /* 相对自身正常位置向下偏移 30px */
+            left: 50px; /* 相对自身正常位置向右偏移 50px */
+        }
+        /* 3. absolute 绝对定位（依赖父容器） */
+        .parent {
+            width: 400px;
+            height: 300px;
+            background-color: #f1c40f;
+            margin: 50px 0;
+            position: relative; /* 父元素设为 relative，作为 absolute 子元素的定位参考 */
+        }
+        .absolute {
+            background-color: #e74c3c;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            bottom: 20px; /* 相对父容器底部偏移 20px */
+            right: 20px; /* 相对父容器右侧偏移 20px */
+        }
+        /* 4. fixed 固定定位（相对浏览器视口） */
+        .fixed {
+            background-color: #9b59b6;
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            top: 20px; /* 相对视口顶部偏移 20px */
+            right: 20px; /* 相对视口右侧偏移 20px */
+        }
+        /* 5. sticky 粘性定位（滚动到指定位置固定） */
+        .sticky {
+            background-color: #1abc9c;
+            position: sticky;
+            top: 0; /* 滚动到视口顶部时，固定在顶部 */
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            margin: 100px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS 五种定位演示</h2>
+    <div class="box static">static（默认）</div>
+    <div class="box relative">relative（相对自身）</div>
+    <div class="parent">
+        父容器（relative）
+        <div class="box absolute">absolute（相对父容器）</div>
+    </div>
+    <div class="box sticky">sticky（滚动到顶部固定）</div>
+    <div class="box fixed">fixed（固定在视口右侧）</div>
+</body>
+</html>
