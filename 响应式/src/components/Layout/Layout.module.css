@@ -1,0 +1,22 @@
+.layout {
+  min-height: 100vh;
+}
+
+.headerArea {
+  z-index: 10;
+}
+
+.sidebarArea {
+  padding: 0;
+}
+
+.contentArea {
+  padding: 2rem;
+}
+
+/* 移动端隐藏侧边栏 */
+@media (max-width: 991px) {
+  .sidebarArea {
+    display: none;
+  }
+}

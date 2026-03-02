@@ -1,0 +1,18 @@
+.sidebar {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.menuLink {
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  transition: background-color 0.2s;
+}
+
+.menuLink:hover {
+  background-color: #e9ecef;
+}
