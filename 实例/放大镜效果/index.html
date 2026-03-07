@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>放大镜效果</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="page">
+    <h1>图片放大镜</h1>
+    <p class="hint">将鼠标移动到图片上查看放大效果，放大镜大小会随鼠标位置变化。</p>
+
+    <section class="magnifier" id="magnifier" aria-label="放大镜示例">
+      <img
+        id="sourceImage"
+        class="source-image"
+        src="./sample.svg"
+        alt="示例图片"
+        draggable="false"
+      />
+      <div id="lens" class="lens" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
